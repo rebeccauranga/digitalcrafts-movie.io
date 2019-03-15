@@ -32,11 +32,14 @@ function renderMovieResults(movies) {
         movieDescriptionElement.textContent = movie.overview;
         detailArea.appendChild(movieDescriptionElement);
 
+        const movieDescriptionElement = document.createElement("p");
+        movieDescriptionElement.textContent = movie.overview;
+        detailArea.appendChild(movieDescriptionElement);
+
 
         const moviePosterElement = document.createElement("img");
-        moviePosterElement.textContent = movie.poster_path;
+        moviePosterElement.setAttribute('src', `https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`);
         detailArea.appendChild(moviePosterElement);
-
 
     });
 }
