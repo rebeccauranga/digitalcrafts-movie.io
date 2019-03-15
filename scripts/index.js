@@ -21,21 +21,15 @@ async function movieSearch()  {
 function renderMovieResults(movies) {
     movies.forEach(movie => {
         console.log(movie);
-        //create a new DOM Element;
+
         const titleElement = document.createElement("h1");
         titleElement.textContent = movie.title; 
         const detailArea = document.querySelector("[data-details]");
         detailArea.appendChild(titleElement);
 
-
         const movieDescriptionElement = document.createElement("p");
         movieDescriptionElement.textContent = movie.overview;
         detailArea.appendChild(movieDescriptionElement);
-
-        const movieDescriptionElement = document.createElement("p");
-        movieDescriptionElement.textContent = movie.overview;
-        detailArea.appendChild(movieDescriptionElement);
-
 
         const moviePosterElement = document.createElement("img");
         moviePosterElement.setAttribute('src', `https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`);
