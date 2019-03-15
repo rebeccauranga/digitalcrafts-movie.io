@@ -1,15 +1,44 @@
-console.log('testing');
-// API_URL = "https://api.themoviedb.org/3/movie/550?api_key=4e818663c4f334a33277fd88c377dea4";
 
 async function fetchMoviesFromUserInput(searchQuery) {
     const API_URL = `https://api.themoviedb.org/3/search/movie?api_key=4e818663c4f334a33277fd88c377dea4&language=en-US&query=${searchQuery}&page=1&include_adult=false`
-
     const response = await fetch(API_URL);
     const searchResults = await response.json();
-    return searchResults;    
+    return searchResults;
 }
 
-fetchMoviesFromUserInput("batman").then( (userInputSearchResults) => {
-    console.log(userInputSearchResults);
-});
+async function movieSearch()  {
+    const inputElement = document.querySelector("input");
+    if (inputElement.value) {
+        const response = await fetchMoviesFromUserInput(inputElement.value);
+        const { results } = response; //destructuring assignment the results array from the response 
+        renderMovieResults(results); // TODO: render these movies into the DOM
+    } else {
+        alert('Please enter a movie!');
+    }
+}
+
+/** render a single search result */
+function renderMovieResults(movies) {
+    movies.forEach(movie => {
+        console.log(movie);
+        //create a new DOM Element;
+        const titleElement = document.createElement("h1");
+        titleElement.textContent = movie.title; 
+        const detailArea = document.querySelector("[data-details]");
+        detailArea.appendChild(titleElement);
+
+
+        const movieDescriptionElement = document.createElement("p");
+        movieDescriptionElement.textContent = movie.overview;
+        detailArea.appendChild(movieDescriptionElement);
+
+
+        const moviePosterElement = document.createElement("img");
+        moviePosterElement.textContent = movie.poster_path;
+        detailArea.appendChild(moviePosterElement);
+
+
+    });
+}
+
 
