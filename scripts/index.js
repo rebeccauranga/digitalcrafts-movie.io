@@ -6,6 +6,29 @@ async function fetchMoviesFromUserInput(searchQuery) {
     return searchResults;
 }
 
+//Chastity code to fetch API
+async function fetchFunFactsFromUserInput(searchQuery) {
+    const API_URLTwo = `https://tastedive.com/api/similar?q=bambi&api_key=332433-frontend-HJU6EF7T&language=en-US&query=${searchQuery}&page=1&include_adult=false`
+    const responseTwo = await fetch(API_URLTwo);
+    const searchResultsTwo = await response.json();
+    return searchResultsTwo;
+}
+
+// Chastity code 
+async function funFactsSearch()  {
+    const inputElementTwo = document.querySelector("input");
+    if (inputElementTwo.value) {
+        const responseTwo = await fetchFunFactsFromUserInput(inputElementTwo.value);
+        const { resultsTwo } = responseTwo; //destructuring assignment the results array from the response 
+        renderFactsResults(resultsTwo); // TODO: render these movies into the DOM
+    } else {
+        alert('Please enter a fun fact!');
+    }
+}
+
+
+
+
 async function movieSearch()  {
     const inputElement = document.querySelector("input");
     if (inputElement.value) {
