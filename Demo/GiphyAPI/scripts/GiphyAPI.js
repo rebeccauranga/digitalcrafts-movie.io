@@ -28,7 +28,7 @@
     $('#searchForm').submit(async (ev) => {
       ev.preventDefault();
 
-      let $input = $('#searchInput');
+      let $input = $('input');
 
       main($input.val());
     });
@@ -45,15 +45,17 @@
       img.src = gif.images.original.url;
       promises.push(onImgLoad(img));
       // img.onload = () => {
-      //   loadedImageCount++;
-      //   if (loadedImageCount === result.data.length){
-      //     hideLoader()
-      //   }
-      // };
-      appendImage(img);
+        //   loadedImageCount++;
+        //   if (loadedImageCount === result.data.length){
+          //     hideLoader()
+          //   }
+          // };
+        appendImage(img);
+        // movieSearch();
     });
 
     await Promise.all(promises);
     hideLoader();
+
   }
 })();

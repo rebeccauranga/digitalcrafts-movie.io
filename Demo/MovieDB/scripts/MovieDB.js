@@ -1,3 +1,5 @@
+
+
 async function fetchMoviesFromUserInput(searchQuery) {
     const API_URL = `https://api.themoviedb.org/3/search/movie?api_key=4e818663c4f334a33277fd88c377dea4&language=en-US&query=${searchQuery}&page=1&include_adult=false`
     const response = await fetch(API_URL);
@@ -20,9 +22,11 @@ async function movieSearch()  {
 
 function renderMovieResults(movies) {
     clearMovieResults();
+    
+
     /** get parent (container) element that will hold the list of movies */
     movies.forEach(movie => {
-    
+
         const titleElement = document.createElement("h1");
         titleElement.textContent = movie.title; 
 
@@ -37,15 +41,10 @@ function renderMovieResults(movies) {
         moviePosterElement.setAttribute('src', `https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`);
         detailArea.appendChild(moviePosterElement);
     });
-}
+
 
  function clearMovieResults() {
     const detailArea = document.querySelector("[data-details]");
     detailArea.innerHTML = "";
  }
 
-document.onkeydown=function(){
-    if(window.event.keyCode=='13'){
-        movieSearch();
-    }
-}

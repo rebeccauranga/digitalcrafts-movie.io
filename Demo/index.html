@@ -4,30 +4,50 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <!-- GiphyAPI.css -->
-    <link rel="stylesheet" href="/GiphyAPI/stylesheets/GiphyAPI.css">
-
 
     <!-- GiphyAPI.css -->
     <link rel="stylesheet" href="/GiphyAPI/stylesheets/GiphyAPI.css">
 
+
+ 
 
     <!-- Movie.css -->
     <link rel="stylesheet" href="/MovieDB/stylesheets/MovieDB.css">
+
+  
+
+    <!-- GiphyAPI.css -->
+    <link rel="stylesheet" href="/GiphyAPI/stylesheets/GiphyAPI.css">
 
     <title>Movie.io</title>
   </head>
   <body>
     <h1>MOVIE.IO</h1>
         
+    
+    
+    <div class="fullscreen-bg">
+      <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
+        <source src="/Media/videos/Oscars-90-years-montage-edited.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="header">
+
+        <h1>MOVIE.IO</h1>
+
+      </div>
+      
 
          <div class="container">
             <form id="searchForm">
                 <div class="input-group mb-3">
                     <input id="searchInput" type="text" class="form-control" placeholder="Search for Movies & Gifs"
+                    
+
                            aria-label="Recipient's username"
                            aria-describedby="button-addon2">
                     <div class="input-group-append">
@@ -36,16 +56,22 @@
                 </div>
             </form>
         
-            <div id="thumbs">
-              
-        
+
+
+            <div id="thumbs">    
             </div>
+
             <div class="movie-content" data-details>
                 <div class ="smallHeader">
-                    
-                    
+                    <h1>MOVIE.IO</h1>
+                    <form>
+                            <input type="text">
+                            <button type="button" onclick="movieSearch();">Go</button>
+                    </form> -->
+
                 </div>
          </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -54,6 +80,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
     <!-- MovieDB.js -->
+    <!-- <script src="/Demo/MovieDB/scripts/MovieDB.js"></script> -->
     <script src="/MovieDB/scripts/MovieDB.js"></script>
 
     <!-- GiphyAPI.js -->
@@ -61,6 +88,7 @@
 
     <!-- Global.js -->
     <script src="/GiphyAPI/scripts/global.js"></script>
+
 
    
   </body>
