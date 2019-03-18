@@ -19,6 +19,7 @@ async function movieSearch()  {
 }
 
 function renderMovieResults(movies) {
+    clearMovieResults();
     /** get parent (container) element that will hold the list of movies */
     movies.forEach(movie => {
     
@@ -38,10 +39,10 @@ function renderMovieResults(movies) {
     });
 }
 
-// function clearMovieResults() {
-//     const detailArea = document.querySelector("[data-details]");
-//     detailArea.innerHTML = "";
-// }
+ function clearMovieResults() {
+    const detailArea = document.querySelector("[data-details]");
+    detailArea.innerHTML = "";
+ }
 
 document.onkeydown=function(){
     if(window.event.keyCode=='13'){
