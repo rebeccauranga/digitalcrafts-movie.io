@@ -46,23 +46,23 @@ function hideVideo() {
     videoElement.style.display = "none";
 }
 
-var GphApiClient = require('giphy-js-sdk-core')
-client = GphApiClient("qcJVUTcz3nQoeWZidSzzlzPB8VBZpmrw")
+// var GphApiClient = require('giphy-js-sdk-core')
+// client = GphApiClient("qcJVUTcz3nQoeWZidSzzlzPB8VBZpmrw")
 
-async function fetchGiphyResultsViaUserInput() {
-const giphy_API_URL = `"http://api.giphy.com/v1/gifs/search?q=${searchQuery}&api_key=qcJVUTcz3nQoeWZidSzzlzPB8VBZpmrw
-&limit=5"`
-const giphyResponse = await fetch(giphy_API_URL);
-constant giphyResults = await response.json();
-return giphyResults;
-}
+// async function fetchGiphyResultsViaUserInput() {
+// const giphy_API_URL = `"http://api.giphy.com/v1/gifs/search?q=${searchQuery}&api_key=qcJVUTcz3nQoeWZidSzzlzPB8VBZpmrw
+// &limit=5"`
+// const giphyResponse = await fetch(giphy_API_URL);
+// constant giphyResults = await response.json();
+// return giphyResults;
+// }
 
-function renderGiphyResults() { 
+// function renderGiphyResults() { 
 
-}
-
-
+// }
 
 
 
-    // Giphy API key qcJVUTcz3nQoeWZidSzzlzPB8VBZpmrw
+
+
+//     // Giphy API key qcJVUTcz3nQoeWZidSzzlzPB8VBZpmrw
