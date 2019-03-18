@@ -14,6 +14,8 @@ async function movieSearch()  {
         const response = await fetchMoviesFromUserInput(inputElement.value);
         const { results } = response; //destructuring assignment the results array from the response 
         renderMovieResults(results); // TODO: render these movies into the DOM
+        hideVideo();
+    
 
     } else {
         alert('Please enter a movie!');
@@ -47,8 +49,12 @@ function clearMovieResults() {
     detailArea.innerHTML = "";
 }
 
-document.onkeydown=function(){
-    if(window.event.keyCode=='13'){
-        movieSearch();
-    }
+function hideVideo() {
+    const videoElement = document.querySelector(".fullscreen-bg");
+    videoElement.style.display = "none";
+}
+
+function hideHeader() {
+    const headerElement = document.querySelector(".header");
+    headerElement.style.display = "none";
 }
