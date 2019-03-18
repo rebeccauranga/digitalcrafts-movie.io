@@ -7,17 +7,16 @@ async function fetchMoviesFromUserInput(searchQuery) {
     return searchResults;
 }
 
-console.log(fetchMoviesFromUserInput('bambi'));
 
 async function movieSearch()  {
     const inputElement = document.querySelector("input");
-    // window.location = `/movie-listing.html?query=${inputElement.value}`;
     if (inputElement.value) {
         const response = await fetchMoviesFromUserInput(inputElement.value);
         const { results } = response; //destructuring assignment the results array from the response 
+        // window.location = `/results.html?query=${inputElement.value}`
         renderMovieResults(results); // TODO: render these movies into the DOM
-        hideVideo();
-        hideHeader();
+        // hideVideo();
+        // hideHeader();
         
     } else {
         alert('Please enter a movie!');
@@ -45,15 +44,24 @@ function renderMovieResults(movies) {
 }
 
 
-function hideVideo() {
-    const videoElement = document.querySelector(".fullscreen-bg");
-    videoElement.style.display = "none";
+// function hideVideo() {
+//     const videoElement = document.querySelector(".fullscreen-bg");
+//     videoElement.style.display = "none";
+// }
+
+// function hideHeader() {
+//     const headerElement = document.querySelector(".header");
+//     headerElement.style.display = "none";
+// }
+
+document.onkeydown=function(){
+    if(window.event.keyCode=='13'){
+        movieSearch();
+        renderMovieResults(movies);
+    }
 }
 
-function hideHeader() {
-    const headerElement = document.querySelector(".header");
-    headerElement.style.display = "none";
-}
+
 
 
 
