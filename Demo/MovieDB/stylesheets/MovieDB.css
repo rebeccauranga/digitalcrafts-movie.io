@@ -115,11 +115,11 @@ button {
   display: flex;
   justify-content: space-between;
   height: 100%;
-  width: 100%;
+  width: 94%;
   border-radius: 10px;
   opacity: 0;
   transition: .5s ease;
-  background-color: rgb(164, 7, 7);
+  background-color: rgb(164, 7, 7, .80);
   overflow-y: auto;
   margin-right: 10px;
 }
