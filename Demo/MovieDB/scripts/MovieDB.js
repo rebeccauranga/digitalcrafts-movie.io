@@ -15,6 +15,7 @@ async function movieSearch()  {
         const { results } = response; //destructuring assignment the results array from the response 
         renderMovieResults(results); // TODO: render these movies into the DOM
         hideVideo();
+        hideHeader();
     
 
     } else {
@@ -25,7 +26,6 @@ async function movieSearch()  {
 function renderMovieResults(movies) {
     clearMovieResults();
     
-
     /** get parent (container) element that will hold the list of movies */
     movies.forEach(movie => {
 
@@ -42,16 +42,15 @@ function renderMovieResults(movies) {
         const moviePosterElement = document.createElement("img");
         moviePosterElement.setAttribute('src', `https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`);
         detailArea.appendChild(moviePosterElement);
-    });
+});
+}
 
 
- function clearMovieResults() {
+function clearMovieResults() {
     const detailArea = document.querySelector("[data-details]");
     detailArea.innerHTML = "";
- }
+}
 
-<<<<<<< HEAD
-=======
 function hideVideo() {
     const videoElement = document.querySelector(".fullscreen-bg");
     videoElement.style.display = "none";
@@ -61,4 +60,3 @@ function hideHeader() {
     const headerElement = document.querySelector(".header");
     headerElement.style.display = "none";
 }
->>>>>>> staging
