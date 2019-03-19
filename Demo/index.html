@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/GiphyAPI/stylesheets/GiphyAPI.css">
 
     <!-- Importing a Google font -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,600" rel="stylesheet">
 
     <title>Movie.io</title>
   </head>
@@ -33,16 +33,18 @@
         <h1>MOVIE.IO</h1>
 
       </div>
+
+      <div class="resultsHeader">
+        <h1> MOVIE.IO</h1>
+      </div>
       
 
          <div class="container">
             <form id="searchForm">
                 <div class="input-group mb-3">
-                    <input id="searchInput" type="text" class="form-control" placeholder="Search for movies and gifs"
-                           aria-label="Recipient's username"
-                           aria-describedby="button-addon2">
+                    <input id="searchInput" type="text" class="form-control search-bar" placeholder="Search for movies and gifs">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" id="searchButton" onclick="movieSearch();">Go</button>
+                        <button class="btn btn-outline-secondary" id="searchButton" onclick="movieSearch();">GO</button>
                     </div>
                 </div>
             </form>
@@ -51,12 +53,14 @@
             </div>
 
             <div class="movie-content" data-details>
-                <!-- <div class ="smallHeader"> -->
-                    <!-- <h1>MOVIE.IO</h1> -->
-                    <!-- <form>
-                            <input type="text">
-                            <button type="button" onclick="movieSearch();">Go</button>
-                    </form> -->
+              <div class="movie-1">
+                <h1>
+                </h1>
+                <p></p>
+                <img src="" alt="">
+              </div>
+               
+            
 
                 </div>
          </div>
