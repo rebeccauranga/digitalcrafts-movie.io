@@ -1,5 +1,8 @@
-console.log('lordt help me');
 
+// var mainClick;
+// function preload(){
+//     mainClick = loadSound("/Media/audio/Dolphins Clicks-SoundBible.com-1458516263.mp3");
+// }
 async function fetchMoviesFromUserInput(searchQuery) {
     const API_URL = `https://api.themoviedb.org/3/search/movie?api_key=4e818663c4f334a33277fd88c377dea4&language=en-US&query=${searchQuery}&page=1&include_adult=false`
     const response = await fetch(API_URL);
@@ -7,10 +10,17 @@ async function fetchMoviesFromUserInput(searchQuery) {
     return searchResults;
 }
 
+function playAudio() {
+    const sound = document.getElementById("myAudio");
+    sound.play();
+}
 
 async function movieSearch()  {
     const inputElement = document.querySelector("input");
+    
+    
     if (inputElement.value) {
+        
         const response = await fetchMoviesFromUserInput(inputElement.value);
         const { results } = response; //destructuring assignment the results array from the response 
         renderMovieResults(results); // TODO: render these movies into the DOM
@@ -43,8 +53,10 @@ function renderMovieResults(movies) {
         `;
 
         detailArea.appendChild(movieResultDiv);
+
 });
 }
+
 
 function clearMovieResults() {
     const detailArea = document.querySelector("[data-details]");
