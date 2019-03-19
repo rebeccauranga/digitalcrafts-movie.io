@@ -26,6 +26,8 @@
 
     <title>Movie.io</title>
     <iframe width="0" height="0" audio src="Media/audio/Movie_Start_Music-KP-241927993.mp3" framework = "0" allowfullscreen></iframe>
+
+    
   
 
   </head>
@@ -56,9 +58,12 @@
             <form id="searchForm">
                 <div class="input-group mb-3">
                     <input id="searchInput" type="text" class="form-control search-bar" placeholder="Search for Movies & Gifs">
-
+                   
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" id="searchButton" onclick="movieSearch();">Go</button>
+                        <audio id="myAudio">
+                          <source src="./Media/audio/Mouse Double Click 2-SoundBible.com-1252820588.mp3" type="">
+                        </audio>
+                        <button class="btn btn-outline-secondary" id="searchButton" onclick="movieSearch();playAudio();">Go</button>
                       </div>
                   </div>
               </form>
